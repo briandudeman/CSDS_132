@@ -1,0 +1,24 @@
+- Date Class
+
+create an instance with Date d = new Date(31, 12, 2000) in the interactions terminal,
+then call d.getDay(), d.getMonth(), and d.getYear(), which should return 31, 12, and 2000 respectively
+
+To test the incrementeDate() and toString() method (as well as some other functionality), call
+d.incrementeDate(), then d.toString() which should return "January 1, 2001". To test this effectively,
+you should repeat this test with the Date objects Date d1 = new Date(11, 11, 1700), 
+Date d2 = new Date(28, 2, 2500), and Date d3 = new Date(31, 12, 2200), each calling incrementeDate() twice
+
+to test daysPerMonth(), just call Date.daysPerMonth() using each number from 1 to 12. The outputs should
+be the number of days in the month corresponding to its number. Also input a number outside of the range
+and the output should be 0
+
+
+retart your interactions window then,
+to test equals() and sameEffectiveDayAs(), create 3 Date instances: Date d3 = new Date(28, 12, 2010),
+Date d4 = new Date(28, 2, 2000), and Date d5 = new Date(28, 12, 2000) call d4.sameEffectiveDayAs(d3)
+which should return true and d4.equals(d3) which should return false. then call d3.equals(d5) which
+should return true. finally, increment the date of d3 and call d4.sameEffectiveDayAs(d3) again. the
+result should be true
+
+
+- Utility
