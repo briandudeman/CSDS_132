@@ -8,8 +8,8 @@ public class Utility {
     // stores the rate the utility charges for their service
     private double utilityRate = 1.0;
 
-    // stores the date of an aniversary(as the Date class we created)
-    private Date aniversaryDate = new Date(1, 1, 2000);
+    // stores the date of an anniversary(as the Date class we created)
+    private Date anniversaryDate = new Date(1, 1, 2000);
 
     // stores a number representing how much the customer has used the utility this month
     private int monthUsage = 0;
@@ -37,11 +37,11 @@ public class Utility {
     
 
     // assigns inputs to instance fields
-    public Utility(double utilityRate, Date aniversaryDate) {
+    public Utility(double utilityRate, Date anniversaryDate) {
         
         this.utilityRate = utilityRate;
 
-        this.aniversaryDate = aniversaryDate;
+        this.anniversaryDate = anniversaryDate;
     }
     
     // gets the rate of the utility company
@@ -120,14 +120,14 @@ public class Utility {
         this.updateAmountPaidThisMonth(payment);
     }
 
-    // gets the aniversary date
-    public Date getAniversaryDate() {
-        return aniversaryDate;
+    // gets the anniversary date
+    public Date getAnniversaryDate() {
+        return anniversaryDate;
     }
 
-    // sets the aniversary date
-    public void setAniversaryDate(Date newAniversaryDate) {
-        this.aniversaryDate = newAniversaryDate;
+    // sets the anniversary date
+    public void setAnniversaryDate(Date newAnniversaryDate) {
+        this.anniversaryDate = newAnniversaryDate;
     }
 
     // gets the sales tax rate of the utility company

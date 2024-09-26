@@ -102,23 +102,23 @@ public class Customer {
     // end of month or end of year processing
     public void incrementDate() {
         this.currentDate.incrementeDate();
-        if (this.currentDate.sameEffectiveDayAs(this.electricUtility.getAniversaryDate())) {
+        if (this.currentDate.sameEffectiveDayAs(this.electricUtility.getAnniversaryDate())) {
             this.electricUtility.endOfMonthProcessing();
         }
-        if (this.currentDate.sameEffectiveDayAs(this.waterUtility.getAniversaryDate())) {
+        if (this.currentDate.sameEffectiveDayAs(this.waterUtility.getAnniversaryDate())) {
             this.waterUtility.endOfMonthProcessing();
         }
-        if (this.currentDate.sameEffectiveDayAs(this.gasUtility.getAniversaryDate())) {
+        if (this.currentDate.sameEffectiveDayAs(this.gasUtility.getAnniversaryDate())) {
             this.gasUtility.endOfMonthProcessing();
         }
 
-        if (this.currentDate.equals(this.electricUtility.getAniversaryDate())) {
+        if (this.currentDate.equals(this.electricUtility.getAnniversaryDate())) {
             this.electricUtility.endOfYearProcessing();
         }
-        if (this.currentDate.equals(this.waterUtility.getAniversaryDate())) {
+        if (this.currentDate.equals(this.waterUtility.getAnniversaryDate())) {
             this.waterUtility.endOfYearProcessing();
         }
-        if (this.currentDate.equals(this.gasUtility.getAniversaryDate())) {
+        if (this.currentDate.equals(this.gasUtility.getAnniversaryDate())) {
             this.gasUtility.endOfYearProcessing();
         }
     }
