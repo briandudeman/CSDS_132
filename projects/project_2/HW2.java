@@ -95,11 +95,39 @@ public class HW2 {
 
         return sb.toString();
     }
-    public static void moveAllXsdown() {
+
+    public static void moveAllXsDown(char c, char[][] board) {
+        for (int i = board.length - 1; i >= 0; i--) {
+            for (int j = board[i].length - 1; j >= 0; j--) {
+                if ((i != 0 && j < board[i - 1].length) && board[i - 1][j] == c) {
+                    char c2 = board[i - 1][j];
+                    board[i - 1][j] = board[i][j];
+                    board[i][j] = c2;
+                }
+            }
+        }
         
     }
-    public static void moveXDownLeft() {
-        
+    public static void moveXDownLeft(char[][] board, char c) {
+        int ci = 0;
+        int cj = 0;
+        System.out.println("tihng");
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                if (board[i][j] == c) {
+                    ci = i;
+                    cj = j;
+                }
+                if (i - ci == cj - j) {
+                    char c2 = board[i][j];
+                    board[i][j] = board[ci][cj];
+                    board[ci][cj] = c2;
+                    ci = i;
+                    cj = j;
+                }
+
+            }
+        }
     }
 
 }
