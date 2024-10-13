@@ -1,4 +1,4 @@
-package challenges.array3DCC;
+package challenges.array2DCC;
 
 public class ArrayStuff {
     
@@ -6,7 +6,7 @@ public class ArrayStuff {
         double total = 0.0;
         for (int idx = 0; idx < input.length; idx++) {
             for (int jdx = 0; jdx < input[idx].length; jdx++) {
-                total += input[idx][jdx][kdx];
+                total += input[idx][jdx];
             }
         }
         return total;
