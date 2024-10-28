@@ -9,6 +9,7 @@
     4. private methods
     5. nested types (static)
     6. cannot have non-abstract instance methods
+    7. no constructor
 5. defined by `public interface` instead of `public class`
 6. for a class that implements an interface, `public class ClassName extends Parent implements InterfaceName`
 

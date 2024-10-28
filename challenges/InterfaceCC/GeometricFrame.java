@@ -1,8 +1,8 @@
-package classwork.date_18_9_24;
+package challenges.InterfaceCC;
 import javax.swing.JFrame;
 
 /* a class that adds geometry features to JFrame*/
-public class GeometricFrame extends JFrame {
+public class GeometricFrame extends JFrame implements Friendly{
 
 	/* a method that transposes the size of the JFrame (withds becomes the height, height becomes the width)*/
 	public void transpose() {

@@ -1,6 +1,6 @@
 package challenges.InterfaceCC;
 
-public class HourlyEmployee extends Employee {
+public class HourlyEmployee extends Employee implements Friendly {
     
     private double hoursWorked;
 
