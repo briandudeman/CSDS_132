@@ -65,4 +65,8 @@ public class GeometricFrame extends JFrame implements Friendly{
         this.displaySizeOnTitle(this.sizeOnTitle);
     }
 
+    public String greeting() {
+        return "Welcome. My name is " + this.getSize();
+    }
+
 }

@@ -79,5 +79,9 @@ public class Employee implements Friendly {
     public boolean earnsMoreThan(Employee e){
         return this.getSalary() > e.getSalary();
     }
+
+    public String greeting() {
+        return "Welcome. My name is " + this.getName();
+    }
     
 }    
