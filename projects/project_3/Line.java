@@ -1,6 +1,6 @@
 package projects.project_3;
 
-public class Line {
+public class Line implements gonInterface{
     
     public Point p1;
     public Point p2;
@@ -32,6 +32,12 @@ public class Line {
         this.p2 = p;
     }
 
+    @Override
+    public Point[] getPoints() {
+        return new Point[] {this.getFirstPoint(), this.getSecondPoint()};
+    }
+
+    @Override
     public Line[] getLines() {
         return new Line[] {this};
     }
