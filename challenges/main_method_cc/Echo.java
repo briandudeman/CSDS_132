@@ -1,4 +1,4 @@
-package challenges.MainMethodCC;
+package challenges.main_method_cc;
 
 public class Echo {
     

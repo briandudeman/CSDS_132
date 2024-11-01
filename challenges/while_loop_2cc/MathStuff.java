@@ -1,4 +1,4 @@
-package challenges.whileLoop2CC;
+package challenges.while_loop_2cc;
 
 public class MathStuff {
     

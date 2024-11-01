@@ -1,4 +1,4 @@
-package challenges.methodOverrideCC;
+package challenges.method_override_cc;
 import javax.swing.JFrame;
 
 
