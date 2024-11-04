@@ -1,13 +1,28 @@
+/**
+ * this class represents a triangle and extends polygon
+ * 
+ * @author Brian LewConklin
+ */
+
 package projects.project_3.main;
 
 public class Triangle extends Polygon {
     
+    /**
+     * the constructor, passes points to Polygon
+     * @param points the array of points of the triangle
+     */
     public Triangle(Point[] points) {
         super(points);
     }
 
+    /**
+     * gets the center of the triangle more specifically than the method it overrides in gonInterface
+     * @return the Point object representing the center
+     */
     @Override
     public Point getCenter() {
+        // these variable just simplify the equations at the end of this method
         double x1 = this.getLines()[0].getFirstPoint().getX();
         double y1 = this.getLines()[0].getFirstPoint().getY();
         

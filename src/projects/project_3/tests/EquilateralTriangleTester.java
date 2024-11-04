@@ -1,5 +1,10 @@
-package projects.project_3.tests;
+/**
+ * this class tests EquilateralTriangle
+ * 
+ * @author Brian LewConklin
+ */
 
+package projects.project_3.tests;
 
 import static org.junit.Assert.assertEquals;
 
@@ -11,12 +16,18 @@ import projects.project_3.main.EquilateralTriangle;
 
 public class EquilateralTriangleTester {
     
+    /**
+     * tests the getSideLength() method
+     */
     @Test
     public void testGetSideLength() {
         EquilateralTriangle eTriangle = new EquilateralTriangle(new Point(0.0, 0.0), 1);
         assertEquals("cannot get the correct side length", 1.0, eTriangle.getSideLength(), .0000001);
     }
 
+    /**
+     * tests the setSideLength() method
+     */
     @Test
     public void testSetSideLength() {
         EquilateralTriangle eTriangle = new EquilateralTriangle(new Point(0.0, 0.0), 1);
@@ -24,6 +35,9 @@ public class EquilateralTriangleTester {
         assertEquals("cannot set the correct side length", 11.0, eTriangle.getSideLength(), .0000001);
     }
 
+    /**
+     * tests the testGetNumSides() method
+     */
     @Test
     public void testGetNumSides() {
         EquilateralTriangle eTriangle = new EquilateralTriangle(new Point(0.0, 0.0), 1);
