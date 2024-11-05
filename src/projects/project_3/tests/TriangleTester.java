@@ -1,12 +1,21 @@
+/**
+ * tests the Triangle class
+ */
+
 package projects.project_3.tests;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import projects.project_3.main.Point;
+import projects.project_3.main.Triangle;
+
 public class TriangleTester {
     
-
+    /**
+     * tests the getCenter() method
+     */
     @Test
     public void testGetCenter() {
         Triangle triangle = new Triangle(new Point[] {new Point(-1.0, 0.0), new Point(1.0, 0.0), new Point(0.0, 1.0)});
