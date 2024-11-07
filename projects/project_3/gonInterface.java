@@ -4,7 +4,7 @@
  * @author Brian LewConklin
  */
 
-package projects.project_3.main;
+package projects.project_3;
 
 public interface gonInterface {
 
@@ -73,14 +73,14 @@ public interface gonInterface {
         // loops through the points and if they are bigger or smaller than the current max or min it sets them  
         for (int i = 1; i < this.getPoints().length; i++) {
             if (this.getPoints()[i].getX() > maxX) {
-                maxY = points[i].getX();
+                maxY = this.getPoints()[i].getX();
             } else if (this.getPoints()[i].getX() < minX) {
-                minY = points[i].getX();
+                minY = this.getPoints()[i].getX();
             }
             if (this.getPoints()[i].getY() > maxY) {
-                maxY = points[i].getY();
+                maxY = this.getPoints()[i].getY();
             } else if (this.getPoints()[i].getY() < minY) {
-                minY = points[i].getY();
+                minY = this.getPoints()[i].getY();
             }
         }
 

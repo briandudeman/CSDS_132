@@ -6,8 +6,8 @@ package projects.project_3.tests;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import projects.project_3.main.Rectangle;
-import projects.project_3.main.Point;
+import projects.project_3.Rectangle;
+import projects.project_3.Point;
 import java.util.Arrays;
 
 public class RectangleTester {

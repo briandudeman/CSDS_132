@@ -3,7 +3,7 @@
 *
 * @author Brian LewConklin
 */
-package projects.project_3.main;
+package projects.project_3;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;

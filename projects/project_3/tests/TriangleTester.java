@@ -4,12 +4,12 @@
 
 package projects.project_3.tests;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import projects.project_3.main.Point;
-import projects.project_3.main.Triangle;
+import projects.project_3.Point;
+import projects.project_3.Triangle;
 
 public class TriangleTester {
     

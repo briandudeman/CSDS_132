@@ -6,7 +6,7 @@ package projects.project_3.tests;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import projects.project_3.main.Point;
+import projects.project_3.Point;
 
 public class PointTester {
     

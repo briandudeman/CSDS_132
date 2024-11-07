@@ -8,7 +8,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
-import projects.project_3.main.*;
+import projects.project_3.*;
 
 public class SquareTester {
 
