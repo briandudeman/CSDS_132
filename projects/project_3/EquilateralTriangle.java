@@ -3,7 +3,7 @@
 *
 * @author Brian LewConklin
 */
-package projects.project_3.main;
+package projects.project_3;
 public class EquilateralTriangle extends Triangle implements NGon {
     // the center of the equilateral triangle
     private Point center;

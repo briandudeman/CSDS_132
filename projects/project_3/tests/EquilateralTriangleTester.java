@@ -8,11 +8,10 @@
 
  import static org.junit.Assert.assertEquals;
  
- import org.junit.Test;
+import org.junit.Test;
+import projects.project_3.EquilateralTriangle;
  
- import projects.project_3.main.Point;
- import projects.project_3.main.Square;
- import projects.project_3.main.EquilateralTriangle;
+
  
  public class EquilateralTriangleTester {
      

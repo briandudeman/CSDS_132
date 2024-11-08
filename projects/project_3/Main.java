@@ -1,4 +1,4 @@
-package projects.project_3.main;
+package projects.project_3;
 
 public class Main {
     
