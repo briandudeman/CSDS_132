@@ -1,4 +1,4 @@
-package classwork.date_16_9_24;
+package classwork.september.date_16_9_24;
 
 public class HourlyEmployee extends Employee {
     
