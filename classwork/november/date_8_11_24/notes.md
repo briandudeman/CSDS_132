@@ -1,4 +1,4 @@
-class (and interfaces) can contain other classes and interfaces
+## classes (and interfaces) can contain other classes and interfaces
 1. nested types
    1. types declared in the body of another type
    2. static
