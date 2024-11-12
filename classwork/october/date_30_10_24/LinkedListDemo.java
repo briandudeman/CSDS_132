@@ -1,8 +1,8 @@
-package classwork.date_28_10_24;
+package october.date_30_10_24;
 
 import java.util.NoSuchElementException;
 
-import classwork.date_28_10_24.LLNode;
+import october.date_28_10_24.LLNode;
 
 public class LinkedListDemo<T> {
 

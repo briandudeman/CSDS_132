@@ -1,4 +1,4 @@
-package classwork.date_2_10_24;
+package october.date_2_10_24;
 
 public class ArrayStuff {
     

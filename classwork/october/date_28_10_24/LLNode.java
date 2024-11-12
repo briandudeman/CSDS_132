@@ -1,4 +1,4 @@
-package classwork.date_28_10_24;
+package october.date_28_10_24;
 
 public class LLNode<T> {
     private T element;

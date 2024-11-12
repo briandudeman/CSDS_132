@@ -1,4 +1,4 @@
-package classwork.date_11_10_24;
+package october.date_11_10_24;
 
 public class factorial {
     public static int thing (int n) {
