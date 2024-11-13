@@ -93,10 +93,15 @@ public class LinkedListExtended<T> {
     }
 
     public void swapFirstTwo() {
-        T originalFirstElement = this.removeFromFront();
-        T originalSecondElement = this.removeFromFront();
-        this.addToFront(originalFirstElement);
-        this.addToFront(originalSecondElement);
+        if (!this.isEmpty() && this.length() > 1) {
+            LLNode<T> originalFirst = this.getFirstNode();
+            this.removeFromFront();
+            LLNode<T> originalSecond = this.getFirstNode();
+            this.removeFromFront();
+            this.setFirstNode(originalFirst);
+            this.setFirstNode(originalSecond);
+        }
+        
     }
 
     public void insertSecondToEnd(T element) {

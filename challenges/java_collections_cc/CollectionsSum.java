@@ -1,15 +1,17 @@
 package java_collections_cc;
 
-import java.util.Collections;
+import java.util.List;
 
-public class CollectionsSum<T extends Collections> {
+public class CollectionsSum {
     
 
-    public double T<Double> sum(T list) {
+    public double sum(List<Double> list) {
         double sum = 0;
         for (Double i : list) {
             sum += i;
         }
+
+        return sum;
     }
 
 }
