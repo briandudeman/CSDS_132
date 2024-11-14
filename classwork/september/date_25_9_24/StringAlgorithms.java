@@ -1,5 +1,5 @@
-package classwork.date_25_9_24;
-import classwork.date_23_9_24.StringStuff;
+package september.date_25_9_24;
+import september.date_23_9_24.StringStuff;
 
 public class StringAlgorithms extends StringStuff{
     

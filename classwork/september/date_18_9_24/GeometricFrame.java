@@ -1,4 +1,4 @@
-package classwork.date_18_9_24;
+package september.date_18_9_24;
 import javax.swing.JFrame;
 
 /* a class that adds geometry features to JFrame*/

@@ -1,4 +1,4 @@
-package classwork.date_23_9_24;
+package september.date_23_9_24;
 
 public class StringStuff {
 

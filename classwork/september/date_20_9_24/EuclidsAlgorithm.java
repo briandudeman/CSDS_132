@@ -1,4 +1,4 @@
-package classwork.date_20_9_24;
+package september.date_20_9_24;
 
 public class EuclidsAlgorithm {
     
