@@ -3,13 +3,13 @@ package integer_cc;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class IntegerRangeIterator<T> implements Iterator<T> {
+public class IntegerRangeIterator implements Iterator<Integer> {
 
     private Integer integerPointer;
 
     private int lastInt;
 
-    public IntegerRangeIterator(Integer startInt, Integer endInt) {
+    public IntegerRangeIterator(int startInt, int endInt) {
         this.lastInt = endInt;
         this.integerPointer = startInt;
     }
@@ -20,13 +20,12 @@ public class IntegerRangeIterator<T> implements Iterator<T> {
     }
 
     @Override
-    public T next() {
-        if (this.integerPointer > this.lastInt) {
+    public Integer next() {
+        if ((int)this.integerPointer > (int)this.lastInt) {
             this.integerPointer = null;
             throw new NoSuchElementException();
         }
 
-        this.integerPointer = this.integerPointer + 1;
-        return this.integerPointer;
+        return this.integerPointer++;
     }
 }

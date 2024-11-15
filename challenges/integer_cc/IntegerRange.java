@@ -13,8 +13,8 @@ public class IntegerRange<T> implements Iterable<T> {
     }
 
     @Override
-    public Iterator<T> iterator() {
-        return new IntegerRangeIterator<T>(new Integer(min), new Integer(max));
+    public Iterator iterator() {
+        return new IntegerRangeIterator(min, max);
     }
 
     public int getMax() {
