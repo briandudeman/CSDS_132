@@ -1,5 +1,7 @@
 package static_nested_non_static_nested_and_anonymous_cc;
 
+import java.lang.classfile.Signature;
+import java.lang.classfile.instruction.ThrowInstruction;
 import java.util.Comparator;
 
 public class Point2D {
@@ -7,6 +9,8 @@ public class Point2D {
     private double x;
 
     private double y;
+
+    private static int p;
 
     public Point2D(double x, double y) {
         this.x = x;
@@ -67,10 +71,11 @@ public class Point2D {
     
     public static Comparator<Point2D> compareByPNorm(int p) {
 
+        Point2D.p = p;
         return new Comparator<Point2D>() {
             @Override
             public int compare(Point2D p1, Point2D p2) {
-                if (Math.pow(Math.abs(point1.getX()), point) + Math.pow((point1.getY() - Point2D.this.getY()), 2) < Math.pow((point2.getX() - Point2D.this.getX()), 2) + Math.pow((point2.getY() - Point2D.this.getY()), 2)) {
+                if (Math.pow(Math.abs(point1.getX()), .p) + Math.pow((point1.getY() - Point2D.this.getY()), 2) < Math.pow((point2.getX() - Point2D.this.getX()), 2) + Math.pow((point2.getY() - Point2D.this.getY()), 2)) {
                     return -1;
                 } else if (Math.pow((point1.getX() - Point2D.this.getX()), 2) + Math.pow((point1.getY() - Point2D.this.getY()), 2) > Math.pow((point2.getX() - Point2D.this.getX()), 2) + Math.pow((point2.getY() - Point2D.this.getY()), 2)) {
                     return 1;
