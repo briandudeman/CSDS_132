@@ -63,6 +63,7 @@ public class Employee implements Comparable<Employee>{
     }
     
     // change how the inherited method toString works by overriding it
+    @Override
     public String toString() {
         return this.getName() + "   , " + this.getNumber();
     }

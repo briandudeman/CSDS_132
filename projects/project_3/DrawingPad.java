@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
 public class DrawingPad {
 // the graphics context of the pad
 private Graphics graphicsContext;
