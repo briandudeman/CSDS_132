@@ -1,6 +1,5 @@
 package date_8_11_24;
 
-import java.lang.classfile.instruction.ThrowInstruction;
 import java.util.Comparator;
 
 public class Employee implements Comparable<Employee>{
@@ -64,6 +63,7 @@ public class Employee implements Comparable<Employee>{
     }
     
     // change how the inherited method toString works by overriding it
+    @Override
     public String toString() {
         return this.getName() + "   , " + this.getNumber();
     }
