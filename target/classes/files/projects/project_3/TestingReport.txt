@@ -1,0 +1,4 @@
+I need tests that test each classes methods effectively, which means:
+ - tests that test the getters and setters effectively
+ - tests that determine if points are the same before and after operations
+ - tests that determine if lines are the same
