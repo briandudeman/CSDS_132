@@ -1,4 +1,4 @@
-package files.projects.project_4.main;
+package files.projects.project_4;
 
 /**
 * LinkedList is a classic LinkedList, has a first node and iterator to go over the items

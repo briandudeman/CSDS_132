@@ -1,4 +1,4 @@
-package files.projects.project_4.main;
+package files.projects.project_4;
 
 
 public class LLNode<T> {
