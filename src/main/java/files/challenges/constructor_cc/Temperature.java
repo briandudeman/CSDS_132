@@ -1,4 +1,4 @@
-package CSDS_132.challenges.constructorCC;
+package files.challenges.constructor_cc;
 
 public class Temperature extends Measurement{
     private double quantity;

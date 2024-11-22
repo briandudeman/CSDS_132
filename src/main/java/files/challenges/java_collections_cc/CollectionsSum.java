@@ -1,4 +1,4 @@
-package cads.challenges.java_collections_cc;
+package files.challenges.java_collections_cc;
 
 import java.util.List;
 

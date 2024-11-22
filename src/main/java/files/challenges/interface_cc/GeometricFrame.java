@@ -1,4 +1,4 @@
-package cads.challenges.InterfaceCC;
+package files.challenges.interface_cc;
 
 import javax.swing.JFrame;
 /* a class that adds geometry features to JFrame*/

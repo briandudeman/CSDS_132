@@ -1,4 +1,4 @@
-package CSDS_132.challenges.InterfaceCC;
+package files.challenges.interface_cc;
 
 public class PrintGreeting {
     

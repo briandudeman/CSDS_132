@@ -1,4 +1,4 @@
-package CSDS_132.challenges.forLoop1And2CC;
+package files.challenges.for_loop1_and2_cc;
 
 public class StringStuff {
     

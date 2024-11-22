@@ -4,9 +4,11 @@
 
 package files.projects.project_3.tests;
 
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-import static org.junit.Assert.*;
-import files.projects.project_3.Point;
+
+import files.projects.project_3.main.Point;
 
 public class PointTester {
     

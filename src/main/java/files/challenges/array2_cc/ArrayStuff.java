@@ -1,4 +1,4 @@
-package CSDS_132.challenges.array2CC;
+package files.challenges.array2_cc;
 
 public class ArrayStuff {
     public int[] append(int[] array1, int[] array2) {

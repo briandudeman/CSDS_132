@@ -1,4 +1,4 @@
-package Array2DCC;
+package files.challenges.array_2d_cc;
 
 import javax.swing.JFrame;
 

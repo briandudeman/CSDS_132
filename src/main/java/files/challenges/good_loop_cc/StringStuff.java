@@ -1,4 +1,4 @@
-package CSDS_132.challenges.goodLoopCC;
+package files.challenges.good_loop_cc;
 
 public class StringStuff {
 

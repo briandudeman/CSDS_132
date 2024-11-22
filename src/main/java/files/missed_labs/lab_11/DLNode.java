@@ -1,3 +1,4 @@
+package files.missed_labs.lab_11;
 
 /**
  * The node of a double linked list.

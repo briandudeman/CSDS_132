@@ -1,4 +1,4 @@
-package CSDS_132.challenges.conditionalStatementCC;
+package files.challenges.conditional_statement_cc;
 
 public class Truncator extends Object{
     

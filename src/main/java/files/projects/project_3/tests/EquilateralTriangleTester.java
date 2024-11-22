@@ -9,8 +9,8 @@ package files.projects.project_3.tests;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-import files.projects.project_3.EquilateralTriangle;
-import files.projects.project_3.Point;
+import files.projects.project_3.main.EquilateralTriangle;
+import files.projects.project_3.main.Point;
  
 
  

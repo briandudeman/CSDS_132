@@ -5,10 +5,16 @@
 package files.projects.project_3.tests;
 
 import org.junit.Test;
+
+import files.projects.project_3.main.Point;
+import files.projects.project_3.main.Rectangle;
+
 import static org.junit.Assert.*;
-import files.projects.project_3.Rectangle;
-import files.projects.project_3.Point;
+
 import java.util.Arrays;
+
+import junit.framework.Assert;
+
 
 public class RectangleTester {
     
@@ -20,7 +26,7 @@ public class RectangleTester {
         Rectangle rectangle = new Rectangle(new Point(0.0, 0.0), 5.0, 10.0);
         Point[] previousPoints = rectangle.getPoints();
         rectangle.rotate(Math.PI * 2);
-        assertArrayEquals("points not rotated fully", previousPoints, rectangle.getPoints());
+        Assert.assertArrayEquals("points not rotated fully", previousPoints, rectangle.getPoints());
     
     }
 

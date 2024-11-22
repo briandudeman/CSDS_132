@@ -1,4 +1,4 @@
-package CSDS_132.challenges.FirstCC;
+package files.challenges.first_cc;
 import java.util.Date;
 
 

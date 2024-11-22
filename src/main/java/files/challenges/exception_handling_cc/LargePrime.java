@@ -1,4 +1,4 @@
-package CSDS_132.challenges.ExceptionHandlingCC;
+package files.challenges.exception_handling_cc;
 
 import java.math.BigInteger;
 

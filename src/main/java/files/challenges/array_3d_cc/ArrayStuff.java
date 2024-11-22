@@ -1,4 +1,4 @@
-package CSDS_132.challenges.array3DCC;
+package files.challenges.array_3d_cc;
 
 public class ArrayStuff {
     

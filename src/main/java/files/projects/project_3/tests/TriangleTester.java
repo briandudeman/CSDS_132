@@ -6,8 +6,8 @@ package files.projects.project_3.tests;
 
 import org.junit.Test;
 
-import files.projects.project_3.Point;
-import files.projects.project_3.Triangle;
+import files.projects.project_3.main.Point;
+import files.projects.project_3.main.Triangle;
 import junit.framework.Assert;
 
 public class TriangleTester {

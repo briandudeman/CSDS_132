@@ -1,4 +1,4 @@
-package challenges.ClassHierarchyCC;
+package files.challenges.class_hierarchy_cc;
 
 public class Ellipse {
     

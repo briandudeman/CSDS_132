@@ -1,4 +1,4 @@
-package cads.challenges.integer_cc;
+package files.challenges.integer_cc;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

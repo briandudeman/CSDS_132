@@ -1,4 +1,4 @@
-package CSDS_132.challenges.constructorCC;
+package files.challenges.constructor_cc;
 
 /* The class that represents some measurement */
 public class Measurement extends Object {

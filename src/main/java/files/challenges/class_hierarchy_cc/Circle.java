@@ -1,4 +1,4 @@
-package CSDS_132.challenges.ClassHierarchyCC;
+package files.challenges.class_hierarchy_cc;
 
 public class Circle extends Ellipse {
     

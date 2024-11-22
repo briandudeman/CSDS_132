@@ -3,7 +3,7 @@
  * 
  * @author Brian LewConklin
  */
-package files.projects.project_3;
+package files.projects.project_3.main;
 
 
 public interface NGon extends gonInterface{

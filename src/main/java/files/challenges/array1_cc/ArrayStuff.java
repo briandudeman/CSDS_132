@@ -1,4 +1,4 @@
-package files.challenges.array1CC;
+package files.challenges.array1_cc;
 
 
 public class ArrayStuff {
