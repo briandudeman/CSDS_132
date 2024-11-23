@@ -1,3 +1,8 @@
+/**
+ * the test file for LLIterator, tests the addBefore and addAfter methods 
+ * @author Brian LewConklin
+ */
+
 package files.projects.project_4;
 
 import java.util.NoSuchElementException;
@@ -7,8 +12,11 @@ import org.junit.Test;
 
 import junit.framework.Assert;
 
-public class LinkedListAndLLIteratorTester {
+public class LLIteratorTester {
     
+    /**
+     * tests the addBefore method of LLIterator
+     */
     @SuppressWarnings("deprecation")
     @Test
     public void testAddBefore() {
@@ -28,11 +36,16 @@ public class LinkedListAndLLIteratorTester {
             fail("caught a different error thats not right :/"); // different exception
         }
 
+        // tests adding to the start of the list
         lli.next();
         lli.addBefore(12);
-        Assert.assertEquals("doesnt add before", 12, (int)ll.getFirstNode().getNext().getElement());
+        Assert.assertEquals("doesnt add before the previous first node", 12, (int)ll.getFirstNode().getElement());
     }
     
+
+    /**
+     * tests the addAfter method of LLIterator. 
+     */
     @SuppressWarnings("deprecation")
     @Test
     public void testAddAfter() {
@@ -56,6 +69,7 @@ public class LinkedListAndLLIteratorTester {
         lli.next();
         lli.next();
         lli.next();
+        lli.next();
         try {
             lli.next();
         } catch (NoSuchElementException e) {
@@ -67,8 +81,6 @@ public class LinkedListAndLLIteratorTester {
         // tests adding to end of list
         lli.addAfter(13);
         Assert.assertEquals("adds incorrectly to end of list", 13, (int)lli.next());
-
-
     }
 
 }

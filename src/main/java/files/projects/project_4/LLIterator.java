@@ -13,11 +13,11 @@ import java.util.NoSuchElementException;
 
 public class LLIterator<T> implements Iterator<T>{
     
-    // the node  that the iterator is on
-    private LLNode<T> currentNode;
+    // the node before the node that the iterator is on
+    private LLNode<T> previousNode;
 
-    // the next node that the iterator is on
-    private LLNode<T> nextNode;
+    // the current node that the iterator is on
+    private LLNode<T> currentNode;
 
     // the linked list itself
     private LinkedList<T> linkedList;
@@ -28,8 +28,8 @@ public class LLIterator<T> implements Iterator<T>{
      */
     public LLIterator(LinkedList<T> linkedList) {
         this.linkedList = linkedList;
-        this.nextNode = this.linkedList.getFirstNode();
-        this.currentNode = null;
+        this.currentNode = new LLNode<>(null, this.linkedList.getFirstNode());
+        this.previousNode = null;
     }
 
     /**
@@ -41,10 +41,9 @@ public class LLIterator<T> implements Iterator<T>{
         if (!this.hasNext()) {
             throw new NoSuchElementException();
         }
-        LLNode<T> save = this.nextNode;
-        this.currentNode = this.nextNode;
-        this.nextNode = this.nextNode.getNext();
-        return save.getElement();
+        this.previousNode = this.currentNode;
+        this.currentNode = this.currentNode.getNext();
+        return this.currentNode.getElement();
     }
     
     /**
@@ -53,7 +52,7 @@ public class LLIterator<T> implements Iterator<T>{
      */
     @Override
     public boolean hasNext() {
-        return this.nextNode != null;
+        return this.currentNode.getNext() != null;
     }
     
     /**
@@ -61,11 +60,14 @@ public class LLIterator<T> implements Iterator<T>{
      * @param element the element to be added, of type T
      */
     public void addBefore(T element) {
-        if (this.currentNode == null) {
+        if (this.currentNode.getElement() == null) {
             throw new NoSuchElementException();
         }
         LLNode<T> newLLNode = new LLNode<>(element, this.currentNode);
-        this.currentNode.setNext(newLLNode);
+        this.previousNode.setNext(newLLNode);
+        if (this.currentNode.equals(this.linkedList.getFirstNode())) {
+            this.linkedList.setFirstNode(newLLNode);
+        }
     }
 
     /**
@@ -73,11 +75,11 @@ public class LLIterator<T> implements Iterator<T>{
      * @param element the element to be added, of type T
      */
     public void addAfter(T element) {
-        if (this.currentNode == null) {
-            this.linkedList.setFirstNode(new LLNode<>(element, this.nextNode));
-            this.nextNode = this.linkedList.getFirstNode();
+        if (this.currentNode.getElement() == null) {
+            this.linkedList.setFirstNode(new LLNode<>(element, this.linkedList.getFirstNode()));
+            this.currentNode.setNext(this.linkedList.getFirstNode());
         } else {
-            this.currentNode.setNext(new LLNode<>(element, this.nextNode));
+            this.currentNode.setNext(new LLNode<>(element, this.currentNode.getNext()));
         }
 
     }

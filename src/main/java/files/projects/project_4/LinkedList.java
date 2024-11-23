@@ -8,6 +8,7 @@ package files.projects.project_4;
 
 import java.util.NoSuchElementException;
 import java.lang.Iterable;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 
@@ -97,6 +98,15 @@ public class LinkedList<T> implements Iterable<T>{
         } else {
             this.addToFront(element);
         }
+    }
+
+    public ArrayList<T> toArrayList() {
+        LLIterator<T> lli = this.iterator();
+        ArrayList<T> al = new ArrayList<>();
+        while (lli.hasNext()) {
+            al.add(lli.next());
+        }
+        return al;
     }
 
     /**
