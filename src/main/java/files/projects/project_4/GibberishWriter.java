@@ -41,6 +41,7 @@ public class GibberishWriter implements Iterator<String>{
 
         Random r = new Random();
         if (this.lastContext == null) {
+            System.out.println("lastContext is null");
             this.lastContext = this.contextData.get(r.nextInt(this.contextData.size()));
         }
     
@@ -54,7 +55,11 @@ public class GibberishWriter implements Iterator<String>{
         }
         
         GibberishWriter.updateContext(newContextArray, returnString);
-        this.lastContext = new ContextData(new Context(newContextArray));
+        System.out.println("old context: " + this.lastContext.getContext().toString());
+        System.out.println("new context: " + Arrays.toString(newContextArray));
+        System.out.println("index of next context: " + Collections.binarySearch(this.contextData, new ContextData(new Context(newContextArray))));
+        System.out.println("next context validated: " + this.getContextData(Collections.binarySearch(this.contextData, new ContextData(new Context(newContextArray)))).getContext().toString());
+        this.lastContext = this.getContextData(Collections.binarySearch(this.contextData, new ContextData(new Context(newContextArray))));
         
         return returnString;
     }
@@ -137,11 +142,18 @@ public class GibberishWriter implements Iterator<String>{
 
     }
 
+    /**
+     * the main entry point into the program, takes 3 command line args, the file name with .txt at the end, the size of each context, and the number of words to output. then runs the program for that ammount of words
+     */
     public static void main(String[] args) {
 
         String fileName = args[0];
         int contextSize = Integer.parseInt(args[1]);
         int numWordsOutput = Integer.parseInt(args[2]);
+
+        ContextData u = new ContextData(new Context(new String[] {"aaaaay", "jpegmafia", "going"}));
+        ContextData v = new ContextData(new Context(new String[] {"jpegmafia", "going", "gargleblast"}));
+        System.out.println("u compared to v: " + u.compareTo(v));
 
         GibberishWriter g = new GibberishWriter(contextSize);
         g.addDataFile(fileName);
@@ -153,7 +165,9 @@ public class GibberishWriter implements Iterator<String>{
                 i++;
             }
         } catch (NoSuchElementException e) {
-            System.out.println("You reached the end of the file");
+            System.out.println("there is no next value");
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("you got a context with a next value that makes the context the last context in the text sample. it also happens that that last context is unique, so there is no next value for it :/");
         }
 
         System.out.println("ran");
@@ -208,7 +222,7 @@ public class GibberishWriter implements Iterator<String>{
 
 
     /**
-     * a class representing a context, ie a list of words sorted alphabetically. it implements comparable
+     * a class representing a context, ie a list of words. it implements comparable
      * includes the methods length, toString, compareTo, equals, and getWord
      */
     public static class Context implements Comparable<Context>{
@@ -217,13 +231,12 @@ public class GibberishWriter implements Iterator<String>{
         private String[] context;
 
         /**
-         * the constructor, sets the context to the input using System.arraycopy, and sorts it alphabetically as well
+         * the constructor, sets the context to the input using System.arraycopy
          * @param context the context to be set in the field, a String[]
          */
         public Context(String[] context) {
             this.context = new String[context.length];
             System.arraycopy(context, 0, this.context, 0, context.length);
-            Arrays.sort(this.context);
         }
 
         /**
