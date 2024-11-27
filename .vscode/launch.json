@@ -1,0 +1,71 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "ButtonGUI",
+            "request": "launch",
+            "mainClass": "files/files.challenges.basic_javafx_event_handling_cc.ButtonGUI",
+            "projectName": "csds_132"
+        },
+        {
+            "type": "java",
+            "name": "LargePrime",
+            "request": "launch",
+            "mainClass": "files/files.challenges.exception_handling_cc.LargePrime",
+            "projectName": "csds_132"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "files/files.challenges.linked_list_node_cc.Main",
+            "projectName": "csds_132"
+        },
+        {
+            "type": "java",
+            "name": "Echo",
+            "request": "launch",
+            "mainClass": "files/files.challenges.main_method_cc.Echo",
+            "projectName": "csds_132"
+        },
+        {
+            "type": "java",
+            "name": "ButtonGUI(1)",
+            "request": "launch",
+            "mainClass": "files/files.classwork.november.date_13_11_24.ButtonGUI",
+            "projectName": "csds_132"
+        },
+        {
+            "type": "java",
+            "name": "MyFirstGUI",
+            "request": "launch",
+            "mainClass": "files/files.classwork.november.date_13_11_24.MyFirstGUI",
+            "projectName": "csds_132"
+        },
+        {
+            "type": "java",
+            "name": "Main(1)",
+            "request": "launch",
+            "mainClass": "files/files.projects.project_3.main.Main",
+            "projectName": "csds_132"
+        },
+        {
+            "type": "java",
+            "name": "GibberishWriter",
+            "request": "launch",
+            "mainClass": "files/files.projects.project_4.GibberishWriter",
+            "args": "${command:SpecifyProgramArgs}",
+            "projectName": "csds_132"
+        }
+    ]
+}
