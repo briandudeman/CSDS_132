@@ -88,8 +88,8 @@ public class ContextTester {
     public void testCompareTo() {
         GibberishWriter.Context a = new GibberishWriter.Context(new String[] {"thing1", "thing2", "thing3", "thing4", "thing5"});
         GibberishWriter.Context b = new GibberishWriter.Context(new String[0]);
-        GibberishWriter.Context c = new GibberishWriter.Context(new String[] {"ahing1", "thing2", "thing3", "thing4", "thing5"});
-        GibberishWriter.Context d = new GibberishWriter.Context(new String[] {"ahing1", "thing2", "thing3", "thing4", "thing5"});
+        GibberishWriter.Context c = new GibberishWriter.Context(new String[] {"thing1", "a", "thing3", "thing4", "thing5"});
+        GibberishWriter.Context d = new GibberishWriter.Context(new String[] {"thing1", "a", "thing3", "thing4", "thing5"});
         GibberishWriter.Context e = new GibberishWriter.Context(new String[] {"thing1", "thing2", "thing3", "thing4"});
 
         Assert.assertEquals("comparing to a context of length 0 should be positive", 1.00f, Math.signum(a.compareTo(b)));

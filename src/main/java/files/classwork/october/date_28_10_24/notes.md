@@ -25,7 +25,6 @@
    2.  double -> Double
 2. java will automatically "box" and "unbox" between primitive and wrapper
    1. EX: `Integer x = 5` is a shortcut for `Integer x = new Integer(5)`
-   2. EX: `Integer x = 5` is a shortcut for `Integer x = new Integer(5)`
       1. but `x = x + 1` right after is `x = new Integer(x.getValue() + 1)`
 
 ## inputing sometho\ing in middle

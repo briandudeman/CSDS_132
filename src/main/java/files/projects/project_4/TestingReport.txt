@@ -1,0 +1,27 @@
+1. GibberishWriterTester
+    1. for each method that has a loop, none
+     of them require really testing 0, 1, 
+     or many of them. many of them require looping
+     through each generated list and comparing it
+     to a list of expected values. this tests
+     the first, middle, and last values accordingly
+2. ContextDataTester
+    1. same thing from GibberishWriterTester, but 
+    with some error handling as well. I did not fully
+    test the compareTo method because it is just
+    using the compareTo method of Context
+3. ContextTester
+    1. for testing the getLength method, testing 0
+    would look like giving it a Context of length
+    0 and asking the length, same for 1 and many.
+    this is the same design used for the toString,
+    compareTo, and equals methods
+4. LLIteratorTester
+    1. same basic principle here as the others,
+    adding after and before were each tested for
+    the beginning, middle, and end of the list
+5. LinkedListTester
+    1. just tests the toArrayList method using 
+    previous techniques
+6. WordDataTester
+    1. just testing basic getters and setters

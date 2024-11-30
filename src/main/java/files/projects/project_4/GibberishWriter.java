@@ -1,9 +1,14 @@
+/**
+ * a class that, taking a text file of a lexacon of words, as well as a few command line arguments (seen in main documentation), generates an output of gibberish
+ * 
+ * @author Brian LewConklin
+ */
+
 package files.projects.project_4;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -12,12 +17,19 @@ import java.util.Scanner;
 
 public class GibberishWriter implements Iterator<String>{
     
+    // an ArrayList of ContextData, represents all of the contexts in the text file, sorted alphabetically
     private ArrayList<ContextData> contextData;
 
+    // the size of each context in contextData or in general
     private int contextSize;
 
+    // the last ContextData that was used in next() and processed
     private ContextData lastContext;
 
+    /**
+     * the constructor, takes a contextSize and sets the appropriate field. also sets the contextData field to an empty ArrayList and lastContext to null
+     * @param contextSize
+     */
     public GibberishWriter(int contextSize) {
         this.contextSize = contextSize;
         this.contextData = new ArrayList<>();
@@ -25,6 +37,10 @@ public class GibberishWriter implements Iterator<String>{
         
     }
 
+    /**
+     * overrides the hasNext() method of Iterator to determine if the lastContext has a next context based on the getFollowingWord method of ContextData
+     * @return a boolean representing if the lastContext has a next context or following word
+     */
     @Override
     public boolean hasNext() throws NoSuchElementException {
         if (this.lastContext != null) {
@@ -33,20 +49,27 @@ public class GibberishWriter implements Iterator<String>{
         return true;
     }
 
+
+    /**
+     * returns the next word and updates lastContext to include that word
+     * @return a String with the following word appended to the lastContext
+     */
     @Override
     public String next() {
         if (!this.hasNext()) {
             throw new NoSuchElementException();
         }
 
+        // starting case, if there is no lastContext
         Random r = new Random();
         if (this.lastContext == null) {
-            System.out.println("lastContext is null");
             this.lastContext = this.contextData.get(r.nextInt(this.contextData.size()));
         }
     
+        // the index of the random word that is following this context, will be chosen with a bias towards frequency
         int randIndex = r.nextInt(this.getContextData(Collections.binarySearch(this.contextData, this.lastContext)).numOccurences());
         
+        // gets the new word and initializes the new context array
         String returnString = this.lastContext.getFollowingWord(randIndex);
         String[] newContextArray = new String[this.contextSize];
         
@@ -54,27 +77,42 @@ public class GibberishWriter implements Iterator<String>{
             newContextArray[i] = this.lastContext.getContext().getWord(i);
         }
         
+        // updates the newcContextArray with the updateContext method
         GibberishWriter.updateContext(newContextArray, returnString);
-        System.out.println("old context: " + this.lastContext.getContext().toString());
-        System.out.println("new context: " + Arrays.toString(newContextArray));
-        System.out.println("index of next context: " + Collections.binarySearch(this.contextData, new ContextData(new Context(newContextArray))));
-        System.out.println("next context validated: " + this.getContextData(Collections.binarySearch(this.contextData, new ContextData(new Context(newContextArray)))).getContext().toString());
+
+        // finds the ContextData in the contextData array and sets lastContext
         this.lastContext = this.getContextData(Collections.binarySearch(this.contextData, new ContextData(new Context(newContextArray))));
         
         return returnString;
     }
 
+    /**
+     * gets the contextSize field
+     * @return an int that is stored in the field
+     */
     public int getContextSize() {
         return this.contextSize;
     }
 
+    /**
+     * gets the ContextData element stored at the index in contextData
+     * @param index the index of the ContextData wanting to be returned
+     * @return a ContextData corresponding to the index in contextData
+     */
     public ContextData getContextData(int index) {
         return this.contextData.get(index);
     }
 
+    /**
+     * adds the Context input to the LinkedList input, in the appropriate order by using the compareTo method of ContextData
+     * @param context the context to be added
+     * @param ll the LinkedList to be added to
+     * @return the Context that was added as a ContextData
+     */
     public static ContextData addContextData(Context context, LinkedList<ContextData> ll) {
         LLIterator<ContextData> lli = ll.iterator(); // iterator for looping through linked list
         ContextData save = new ContextData(context);
+
             if (lli.hasNext()) {
                 GibberishWriter.ContextData currentNode = lli.next();
                 while (context.compareTo(currentNode.getContext()) > 0 && lli.hasNext()) { // finding the node that is just after where the input should go
@@ -98,20 +136,24 @@ public class GibberishWriter implements Iterator<String>{
         
     }
 
+    /**
+     * updates the contextData field using the file provided. To TA's: you will have to change the file path in this method for everything to work
+     * @param FileName the name of the file to be read
+     */
     public void addDataFile(String FileName) {
         LinkedList<ContextData> llContextData = this.toLinkedList();
-        File file = new File("C:\\Users\\Stick\\2024 Semester 1\\CSDS_132\\src\\main\\java\\files\\projects\\project_4\\" + FileName); // whoever runs this will have to change it
+        File file = new File("C:\\Users\\Stick\\OneDrive\\College Work\\2024 Semester 1\\csds_132\\src\\main\\java\\files\\projects\\project_4\\" + FileName); // whoever runs this will have to change it
 
         try {
             Scanner sc = new Scanner(file);
             int numWords = 0;
             String[] context = new String[this.contextSize];
-            while (sc.hasNext()) {
+            while (sc.hasNext()) { // going through file
                 String nextWord = sc.next();
-                if (numWords < this.contextSize) {
+                if (numWords < this.contextSize) { // for the first context sized number of elements
                     context[numWords] = nextWord;
                     numWords++;
-                } else {
+                } else { // for the rest of file, update the context and such
                     Context currentContext = new Context(context);
                     ContextData currentContextData = addContextData(currentContext, llContextData);
                     currentContextData.addFollowingWord(nextWord);
@@ -119,21 +161,33 @@ public class GibberishWriter implements Iterator<String>{
                 }
             }
 
+            // sets the contextData to the ArrayList version of the LinkedList
             this.contextData = llContextData.toArrayList();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * converts whatever is in the contextData field to a LinkedList
+     * @return a LinkedList that is a LinkedList of contextData
+     */
     public LinkedList<ContextData> toLinkedList() {
         LinkedList<ContextData> llContextData = new LinkedList<>();
-        for (int i = 0; i < this.contextData.size(); i++) {
-            llContextData.addToEnd(this.contextData.get(i));
+        for (int i = 0; i < this.contextData.size(); i++) { // looping through contextData
+            llContextData.addToEnd(this.getContextData(i));
         }
         return llContextData;
     }
 
+    /**
+     * updates an array version of a context with a new word
+     * @param context a String[] that is the current context
+     * @param newWord the word to be added to the context, goes in the last index of the array and kicks out the first
+     */
     public static void updateContext(String[] context, String newWord) {
+
+        // looping backwards through array and moving each word back 1
         for (int i = context.length - 1; i > -1; i--) {
             String wordBehind = context[i];
             context[i] = newWord;
@@ -147,20 +201,17 @@ public class GibberishWriter implements Iterator<String>{
      */
     public static void main(String[] args) {
 
+        // parsing args
         String fileName = args[0];
         int contextSize = Integer.parseInt(args[1]);
         int numWordsOutput = Integer.parseInt(args[2]);
 
-        ContextData u = new ContextData(new Context(new String[] {"aaaaay", "jpegmafia", "going"}));
-        ContextData v = new ContextData(new Context(new String[] {"jpegmafia", "going", "gargleblast"}));
-        System.out.println("u compared to v: " + u.compareTo(v));
-
+        // makes the GibberishWriter and adds everything in the data file
         GibberishWriter g = new GibberishWriter(contextSize);
         g.addDataFile(fileName);
-        System.out.println("running...");
         int i = 0;
         try {
-            while (g.hasNext() && i < numWordsOutput) {
+            while (g.hasNext() && i < numWordsOutput) { // main loop that prints the output words, if the number of words is less than numWordsOutput
                 System.out.println(g.next());                
                 i++;
             }
@@ -169,8 +220,6 @@ public class GibberishWriter implements Iterator<String>{
         } catch (IndexOutOfBoundsException e) {
             System.out.println("you got a context with a next value that makes the context the last context in the text sample. it also happens that that last context is unique, so there is no next value for it :/");
         }
-
-        System.out.println("ran");
         
     }
 
@@ -311,13 +360,13 @@ public class GibberishWriter implements Iterator<String>{
          */
         @Override
         public int compareTo(Context c) {
-            int sum = 0; // the sum of the strings being compared
             int length = this.length(); // the smaller length, compareTo will only be based on the same number of elements
 
             if (this.length() < c.length()) { // if the c length is smaller, use that
                 length = c.length();
             }
 
+            // just for if two compared contexts are different lengths
             ArrayList<String> thisContextPadded = new ArrayList<>();
             ArrayList<String> contextPadded = new ArrayList<>();
 
@@ -335,11 +384,15 @@ public class GibberishWriter implements Iterator<String>{
                 }
             }
 
-            // summing up the compareTo's of each word
+            // goes over each word in context and compares them with String's compareTo method
             for (int i = 0; i < length; i++) {
-                sum += thisContextPadded.get(i).compareTo(contextPadded.get(i));
+                if (thisContextPadded.get(i).compareTo(contextPadded.get(i)) < 0) {
+                    return -1;
+                } else if (thisContextPadded.get(i).compareTo(contextPadded.get(i)) > 0) {
+                    return 1;
+                }
             }
-            return sum;
+            return 0;
         }
 
     }
