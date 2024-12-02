@@ -1,0 +1,9 @@
+# Created at 2024-12-02T14:39:03.158
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream 'Error occurred during initialization of boot layer'.
+
+# Created at 2024-12-02T14:39:03.161
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream 'java.lang.module.FindException: Error reading module: C:\Users\Stick\OneDrive\College Work\2024 Semester 1\csds_132\target\classes'.
+
+# Created at 2024-12-02T14:39:03.172
+Corrupted channel by directly writing to native stream in forked JVM 1. Stream 'Caused by: java.lang.module.InvalidModuleDescriptorException: Package files.challenges.java_optional_cc not found in module'.
+

@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Reflection",
+            "request": "launch",
+            "mainClass": "files/files.challenges.java_reflection_cc.Reflection",
+            "projectName": "csds_132"
+        },
+        {
+            "type": "java",
+            "name": "CustomerModified",
+            "request": "launch",
+            "mainClass": "files/files.challenges.java_optional_cc.CustomerModified",
+            "projectName": "csds_132"
+        },
+        {
+            "type": "java",
+            "name": "CCClass",
+            "request": "launch",
+            "mainClass": "files/files.challenges.anonymous_class2_cc.CCClass",
+            "projectName": "csds_132"
+        },
+        {
+            "type": "java",
+            "name": "Person",
+            "request": "launch",
+            "mainClass": "files/files.challenges.method_reference_syntax_cc.Person",
+            "projectName": "csds_132"
+        },
+        {
+            "type": "java",
+            "name": "buttonGUILambda",
+            "request": "launch",
+            "mainClass": "files/files.challenges.lambda_syntax_cc.buttonGUILambda",
+            "projectName": "csds_132"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
