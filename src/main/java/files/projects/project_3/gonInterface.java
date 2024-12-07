@@ -14,8 +14,9 @@ public interface gonInterface {
      */
     default void rotate(double angle) {
         // rotating each point by the center
+        Point center = this.getCenter();
         for (int i = 0; i < this.getPoints().length; i++) {
-            this.getPoints()[i].rotateAbout(this.getCenter(), angle);
+            this.getPoints()[i].rotateAbout(center, angle);
         }
     }
 
@@ -73,9 +74,9 @@ public interface gonInterface {
         // loops through the points and if they are bigger or smaller than the current max or min it sets them  
         for (int i = 1; i < this.getPoints().length; i++) {
             if (this.getPoints()[i].getX() > maxX) {
-                maxY = this.getPoints()[i].getX();
+                maxX = this.getPoints()[i].getX();
             } else if (this.getPoints()[i].getX() < minX) {
-                minY = this.getPoints()[i].getX();
+                minX = this.getPoints()[i].getX();
             }
             if (this.getPoints()[i].getY() > maxY) {
                 maxY = this.getPoints()[i].getY();
@@ -83,7 +84,6 @@ public interface gonInterface {
                 minY = this.getPoints()[i].getY();
             }
         }
-
         return new Point((0.5 * (maxX - minX)) + minX, (0.5 * (maxY - minY)) + minY);
 
     }

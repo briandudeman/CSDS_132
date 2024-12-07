@@ -67,11 +67,28 @@ public class Line implements gonInterface{
     }
 
     /**
-     * gets the midpoint of the lines
+     * gets the midpoint of the line
      * @return the Point that represents the mid point of the line
      */
     public Point getMidPoint() {
         return new Point(((this.getSecondPoint().getX() - this.getFirstPoint().getX()) * .5) + this.getFirstPoint().getX(), ((this.getSecondPoint().getY() - this.getFirstPoint().getY()) * .5) + this.getFirstPoint().getY());
+    }
+
+    /**
+     * gets a vector representing the line, ie just the second point - the first
+     * @return a list of 2 doubles, the first being the x coord and the second the y
+     */
+    public double[] getLineVector() {
+        return new double[] {this.getSecondPoint().getX() - this.getFirstPoint().getX(), this.getSecondPoint().getY() - this.getFirstPoint().getY()};
+    }
+
+    /**
+     * gets the 1/3 and 2/3 points of the line
+     * @return a list of Point that represents the 1/3 and 2/3 points of the line
+     */
+    public Point[] getThirdsPoints() {
+        double[] lineVector = this.getLineVector();
+        return new Point[] {new Point(this.getFirstPoint().getX() + (lineVector[0] * (1.00 / 3.00)), this.getFirstPoint().getY() + lineVector[1] * (1.00 / 3.00)), new Point(this.getFirstPoint().getX() + (lineVector[0] * (2.0 / 3.0)), this.getFirstPoint().getY() + (lineVector[1] * (2.0 / 3.0)))};
     }
 
     /**

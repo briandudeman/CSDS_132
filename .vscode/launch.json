@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "files/files.projects.project_6.Main",
+            "projectName": "csds_132"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "files/files.projects.project_5.Main",
+            "projectName": "csds_132"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "files/files.projects.project_3.Main",
+            "projectName": "csds_132"
+        },
+        {
+            "type": "java",
             "name": "Reflection",
             "request": "launch",
             "mainClass": "files/files.challenges.java_reflection_cc.Reflection",

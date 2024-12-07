@@ -64,7 +64,7 @@ public class Point {
      */
     public void rotateAbout(Point p, double angle) {
         double xr = (this.getX() - p.getX()) * Math.cos(angle) - (this.getY() - p.getY()) * Math.sin(angle);
-        double yr = (this.getX() - p.getX()) * Math.sin(angle) - (this.getY() - p.getY()) * Math.cos(angle);
+        double yr = (this.getX() - p.getX()) * Math.sin(angle) + (this.getY() - p.getY()) * Math.cos(angle);
 
         this.setX(p.getX() + xr);
         this.setY(p.getY() + yr);

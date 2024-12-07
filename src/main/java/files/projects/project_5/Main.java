@@ -1,8 +1,14 @@
-package files.projects.project_3;
+package files.projects.project_5;
+
+import files.projects.project_3.DrawingPad;
+import files.projects.project_3.EquilateralTriangle;
+import files.projects.project_3.Point;
+import files.projects.project_3.Rectangle;
+import files.projects.project_3.Square;
+import files.projects.project_3.Triangle;
 
 public class Main {
-    
-    public static void main(String[] args) {
+    public static void main(String[] args) {        
         DrawingPad dp = new DrawingPad(500, 500);
         Rectangle rectangle = new Rectangle(new Point(100.0, 100.0), 5.0, 10.0);
         Rectangle rectangle1 = new Rectangle(new Point(100.0, 100.0), 5.0, 10.0);
@@ -12,6 +18,9 @@ public class Main {
         Triangle t1 = new Triangle(new Point[] {new Point(230, 260), new Point(270, 260), new Point(200, 230)});
         Triangle t2 = new Triangle(new Point[] {new Point(230, 260), new Point(270, 260), new Point(200, 230)});
         
+        SnowFlakeFractal eTriangleFractal = new SnowFlakeFractal(eTriangle, 1);
+
+
         rectangle.rotate(Math.PI / 2);
         eTriangle.rotate(Math.PI / 2);
         t2.rotate(Math.PI / 2);
@@ -21,10 +30,11 @@ public class Main {
         System.out.println(rectangle1.getCenter().getX() + " " + rectangle1.getCenter().getY());
         dp.draw(rectangle);
         dp.draw(rectangle1);
-        dp.draw(eTriangle);
-        dp.draw(eTriangle1);
+        //dp.draw(eTriangle);
+        //dp.draw(eTriangle1);
         dp.draw(t1);
         dp.draw(t2);
+        dp.draw(eTriangleFractal);
     }
 
 }

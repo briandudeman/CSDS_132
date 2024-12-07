@@ -1,0 +1,7 @@
+SnowFlakeFractal Testing Description
+- The tester class for SnowFlakeFractal needs only test its getPoints method with 
+Equilateral Triangle and Square classes and should be tested with levels of 0, 1, and 5
+
+Fractal Testing Description
+- this tester class should test each basic getter/setter in Fractal with each subclass of 
+Polygon and levels 0, 1, 5
