@@ -13,8 +13,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class DrawingPad {
-// the graphics context of the pad
-private Graphics graphicsContext;
+    // the graphics context of the pad
+    private Graphics graphicsContext;
     // the canvas that we draw on
     private Canvas canvas;
     /**
@@ -62,6 +62,7 @@ private Graphics graphicsContext;
             (int)line.getSecondPoint().getY());
         }
     }
+    
     /**
     * erases everything on the canvas to white
     */

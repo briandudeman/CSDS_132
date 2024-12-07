@@ -7,6 +7,8 @@ module files {
 
     opens files.classwork.november.date_13_11_24 to javafx.fxml;
 
+    opens files.projects.project_5 to javafx.graphics;
+
     //opens files.challenges.lambda_syntax_cc to javafx.graphics;
 
     //exports files.challenges.java_optional_cc;

@@ -29,7 +29,7 @@ public class SnowFlakeFractal extends Fractal{
                     currentPoints[0 + (4 * j)] = pastPoints[j];
                     currentPoints[1 + (4 * j)] = currentLine.getThirdsPoints()[0];
                     currentPoints[2 + (4 * j)] = currentLine.getThirdsPoints()[1];
-                    currentPoints[2 + (4 * j)].rotateAbout(currentLine.getThirdsPoints()[0], Math.PI / 3);
+                    currentPoints[2 + (4 * j)].rotateAbout(currentLine.getThirdsPoints()[0], (-Math.PI / 3));
                     currentPoints[3 + (4 * j)] = currentLine.getThirdsPoints()[1];
                 }
 
