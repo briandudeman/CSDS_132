@@ -23,8 +23,8 @@ public class Main {
         Triangle t1 = new Triangle(new Point[] {new Point(230, 260), new Point(270, 260), new Point(200, 230)});
         Triangle t2 = new Triangle(new Point[] {new Point(230, 260), new Point(270, 260), new Point(200, 230)});
         
-        //SnowFlakeFractal eTriangleFractal = new SnowFlakeFractal(eTriangle, 0);
-        SnowFlakeFractal squareFractal = new SnowFlakeFractal(square, 1);
+        SnowFlakeFractal eTriangleFractal = new SnowFlakeFractal(eTriangle, 3);
+        SnowFlakeFractal squareFractal = new SnowFlakeFractal(square, 3);
 
 
         //squareFractal.rotate(Math.PI / 4);
@@ -36,16 +36,16 @@ public class Main {
         dp.draw(rectangle);
         dp.draw(rectangle1);
         dp.draw(eTriangle);
-        dp.draw(eTriangle1);
-        dp.draw(eTriangle2);
-        dp.draw(eTriangle3);
-        dp.draw(eTriangle4);
-        dp.draw(eTriangle5);
-        dp.draw(eTriangle6);
+        //dp.draw(eTriangle1);
+        //dp.draw(eTriangle2);
+        //dp.draw(eTriangle3);
+        //dp.draw(eTriangle4);
+        //dp.draw(eTriangle5);
+        //dp.draw(eTriangle6);
         //dp.draw(t1);
         //dp.draw(t2);
-        //dp.draw(eTriangleFractal);
-        //dp.draw(squareFractal);
+        dp.draw(eTriangleFractal);
+        dp.draw(squareFractal);
     }
 
 }
