@@ -75,7 +75,7 @@ public class Point {
     public boolean equals(Object o) {
         if (o instanceof Point) {
             Point p = (Point)o;
-            return (this.getX() == p.getX() && this.getY() == p.getY());
+            return ((this.getX() >= (p.getX() - .01) && (this.getX() <= (p.getX() + .01))) && (this.getY() >= (p.getY() - .01) && (this.getY() <= (p.getY() + .01))));
         }
         return false;
     }
