@@ -14,7 +14,7 @@ public class Main {
         Rectangle rectangle1 = new Rectangle(new Point(100.0, 100.0), 5.0, 10.0);
         Square square = new Square(new Point(200.0, 200.0), 100.0);
         EquilateralTriangle eTriangle = new EquilateralTriangle(new Point(100.0, 150.0), 100.0);
-        EquilateralTriangle eTriangle1 = new EquilateralTriangle(new Point(100.0, 150.0), 100.0);
+        EquilateralTriangle eTriangle1 = new EquilateralTriangle(new Point(110.0, 150.0), 100.0);
         EquilateralTriangle eTriangle2 = new EquilateralTriangle(new Point(110.0, 150.0), 100.0);
         EquilateralTriangle eTriangle3 = new EquilateralTriangle(new Point(120.0, 150.0), 100.0);
         EquilateralTriangle eTriangle4 = new EquilateralTriangle(new Point(130.0, 150.0), 100.0);
@@ -29,14 +29,14 @@ public class Main {
 
         //squareFractal.rotate(Math.PI / 4);
         //eTriangleFractal.rotate(Math.PI / 2);
-        eTriangle.rotate(Math.PI / 2);
+        eTriangle.rotate(Math.PI *(3 / 4));
         //t2.rotate(Math.PI / 2);
         dp.getGraphicsContext();
         Thread.sleep(500);
         dp.draw(rectangle);
         dp.draw(rectangle1);
         dp.draw(eTriangle);
-        //dp.draw(eTriangle1);
+        dp.draw(eTriangle1);
         //dp.draw(eTriangle2);
         //dp.draw(eTriangle3);
         //dp.draw(eTriangle4);
